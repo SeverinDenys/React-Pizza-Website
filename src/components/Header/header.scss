@@ -1,0 +1,84 @@
+@use "../../styles/variables.scss" as vars;
+
+.header {
+  border-bottom: 1px solid vars.$gray-line;
+  padding: 4rem 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: flex;
+
+    img {
+      margin-right: 1.5rem;
+    }
+
+    h1 {
+      color: #181818;
+      font-size: 2rem;
+      letter-spacing: 1%;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    p {
+      color: #7b7b7b;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.button {
+  display: inline-block;
+  background-color: vars.$orange;
+  border-radius: 3rem;
+  padding: 1rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color vars.$duration ease-in-out, border-color vars.$duration ease-in-out;
+  width: 80%;
+  margin: 0 auto;
+
+  &,
+  span {
+    color: #fff;
+  }
+
+  &:hover {
+    background-color: darken(vars.$orange, 8%);
+  }
+
+  &:active {
+    background-color: darken(vars.$orange, 12%);
+    transform: translateY(1px);
+  }
+
+  &--cart {
+    display: flex;
+    align-items: center;
+    line-height: 2rem;
+    padding: 1.2rem 1.4rem;
+
+    svg {
+      margin-right: 5px;
+      margin-bottom: 1px;
+    }
+
+    span {
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__delimiter {
+    width: 1px;
+    height: 2.5rem;
+    background-color: rgba(255, 255, 255, 0.25);
+    margin: 0 1rem;
+  }
+}
