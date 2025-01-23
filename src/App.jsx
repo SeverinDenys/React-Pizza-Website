@@ -1,5 +1,6 @@
 import Categories from "./components/Categories/Categories";
 import Header from "./components/Header/Header";
+import Sort from "./components/Sort/Sort";
 
 function App() {
   return (
@@ -8,7 +9,8 @@ function App() {
         <Header />
         <div className="container">
           <div className="content__top">
-            <Categories/>
+            <Categories />
+            <Sort />
           </div>
         </div>
       </div>

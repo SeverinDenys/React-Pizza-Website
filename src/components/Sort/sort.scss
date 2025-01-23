@@ -1,0 +1,55 @@
+@use "../../styles/variables.scss" as vars;
+
+.sort {
+  margin-top: 2rem;
+  margin-right: 2rem;
+  position: relative;
+  &__label {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 8px;
+    }
+
+    b {
+      margin-right: 8px;
+    }
+
+    span {
+      color: vars.$orange;
+      border-bottom: 1px dashed vars.$orange;
+      cursor: pointer;
+    }
+  }
+
+  &__popup {
+    position: absolute;
+    right: 0;
+    margin-top: 1rem;
+    background: #ffffff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+    border-radius: 1rem;
+    overflow: hidden;
+
+    width: 12rem;
+
+    ul {
+      overflow: hidden;
+      li {
+        padding: 1.2rem 2rem;
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+          background: rgba(254, 95, 30, 0.05);
+        }
+
+        &.active {
+          font-weight: bold;
+          color: vars.$orange;
+        }
+      }
+    }
+  }
+}

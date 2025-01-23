@@ -1,11 +1,11 @@
 @use "../../styles/variables.scss" as vars;
 
 .categories {
-  margin: 0 auto;
+  margin-left: 1rem;
   ul {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: left;
     font-size: 2rem;
 
     li {
