@@ -6,7 +6,7 @@ const Header = () => {
     <div className="header">
       <div className="container">
         <div className="header__logo">
-          <img width="38" src={PizzaLogoIcon} alt="Pizza logo" />
+          <img src={PizzaLogoIcon} alt="Pizza logo" />
           <div>
             <h1>React Pizza</h1>
             <p>The most delicious Pizza in Universe</p>
