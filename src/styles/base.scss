@@ -48,8 +48,12 @@ a {
 .wrapper {
   width: 90%;
   height: 100%;
-  // background-color: #fff;
+  background-color: #fff;
   margin: 2rem auto;
   border-radius: 1rem;
   max-width: 1400px;
+}
+
+body {
+  background-color: vars.$background;
 }
