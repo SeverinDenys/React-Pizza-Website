@@ -8,73 +8,75 @@ import trufelMushroomsPizza from './src/assets/images/trufelMushrooms.png'
 
 export const pizzaData = [
   {
+    id: 0,
+    category: 0,
     img: norvegianPizza,
     name: 'Norwegian',
-    firstSizeName: 'thin',
-    secondSizeName: 'traditional',
-    firstPortionSize: '26cm',
-    secondPortionSize: '30cm',
-    thirdPortionSize: '40cm',
-    price: 15
+    
+    types: ['thin', 'traditional'],
+    sizes: [26,   40],
+    price: 15,
+    rating: 1
   },
   {
+    id: 1,
+    category: 1,
     img: carbonaraPizza,
     name: 'Carbonara',
-    firstSizeName: 'thin',
-    secondSizeName: 'traditional',
-    firstPortionSize: '26cm',
-    secondPortionSize: '30cm',
-    thirdPortionSize: '40cm',
-    price: 20
+    types: ['thin', 'traditional'],
+    sizes: [26, 30, 40],
+    price: 20,
+    rating: 2
   },
   {
+    id: 2,
+    category: 2,
     img: doubleMeatPizza,
     name: 'Double Meat',
-    firstSizeName: 'thin',
-    secondSizeName: 'traditional',
-    firstPortionSize: '26cm',
-    secondPortionSize: '30cm',
-    thirdPortionSize: '40cm',
-    price: 25
+    types: ['thin', 'traditional'],
+    sizes: [26, 30, 40],
+    price: 25,
+    rating: 3
   },
   {
+    id: 3,
+    category: 3,
     img: fourCheesePizza,
     name: 'Four Cheese',
-    firstSizeName: 'thin',
-    secondSizeName: 'traditional',
-    firstPortionSize: '26cm',
-    secondPortionSize: '30cm',
-    thirdPortionSize: '40cm',
-    price: 18
+    types: ['thin', 'traditional'],
+    sizes: [26, 30, 40],
+    price: 18,
+    rating: 4
   },
   {
+    id: 4,
+    category: 4,
     img: margaritaPizza,
     name: 'Margarita',
-    firstSizeName: 'thin',
-    secondSizeName: 'traditional',
-    firstPortionSize: '26cm',
-    secondPortionSize: '30cm',
-    thirdPortionSize: '40cm',
-    price: 12
+    types: ['thin', 'traditional'],
+    sizes: [ 30, 40],
+    price: 12,
+    rating: 5
   },
   {
+    id: 5,
+    category: 5,
     img: peperoniPizza,
     name: 'Peperoni',
-    firstSizeName: 'thin',
-    secondSizeName: 'traditional',
-    firstPortionSize: '26cm',
-    secondPortionSize: '30cm',
-    thirdPortionSize: '40cm',
-    price: 17
+    types: ['thin', 'traditional'],
+    sizes: [26,   40],
+    price: 17,
+    rating: 6
+    
   },
   {
+    id: 6,
+    category: 6,
     img: trufelMushroomsPizza,
     name: 'Trufel&Mushrooms',
-    firstSizeName: 'thin',
-    secondSizeName: 'traditional',
-    firstPortionSize: '26cm',
-    secondPortionSize: '30cm',
-    thirdPortionSize: '40cm',
-    price: 30
+    types: ['thin', 'traditional'],
+     sizes: [26, 30, 40],
+    price: 30,
+    rating: 7
   },
 ] 

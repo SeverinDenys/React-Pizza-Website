@@ -16,7 +16,7 @@ const Header = () => {
           <a href="/cart.html" className="button button--cart">
             <span>20 $</span>
             <div className="button__delimiter"></div>
-            <ShoppingCart size={30} />
+            <ShoppingCart size={40} />
             <span>3</span>
           </a>
         </div>
