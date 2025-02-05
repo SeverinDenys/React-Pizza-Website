@@ -19,7 +19,7 @@ const PizzaBlock = () => {
     };
     fetchedData();
   }, []);
- 
+
   return (
     <>
       {items.map((pizza) => (
