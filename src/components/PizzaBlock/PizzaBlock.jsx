@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import PizzaItem from "../PizzaItem/PizzaItem";
+import Skeleton from "../Skelleton/Skeleton";
 
 const PizzaBlock = () => {
   const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchedData = async () => {
@@ -13,6 +15,7 @@ const PizzaBlock = () => {
         }
         const result = await response.json();
         setItems(result);
+        setIsLoading(false);
       } catch (err) {
         console.log(err.message);
       }
@@ -22,9 +25,10 @@ const PizzaBlock = () => {
 
   return (
     <>
-      {items.map((pizza) => (
-        <PizzaItem key={pizza.id} pizza={pizza} />
-      ))}
+    
+      {isLoading
+        ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
+        : items.map((pizza) => <PizzaItem key={pizza.id} pizza={pizza} />)}
     </>
   );
 };
