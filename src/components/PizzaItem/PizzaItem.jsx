@@ -2,7 +2,6 @@
 import { Plus } from "lucide-react";
 import { useState } from "react";
 
-
 const PizzaItem = ({ pizza }) => {
   const [pizzaCount, setPizzaCount] = useState(0);
   const [activeType, setActiveType] = useState(0);
