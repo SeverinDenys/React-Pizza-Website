@@ -16,6 +16,7 @@ const PizzaBlock = () => {
         const result = await response.json();
         setItems(result);
         setIsLoading(false);
+        window.scrollTo(0, 0); //when first time render scroll to top of page
       } catch (err) {
         console.log(err.message);
       }
@@ -25,10 +26,11 @@ const PizzaBlock = () => {
 
   return (
     <>
-    
-      {isLoading
-        ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
-        : items.map((pizza) => <PizzaItem key={pizza.id} pizza={pizza} />)}
+      <div className="content__items">
+        {isLoading
+          ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
+          : items.map((pizza) => <PizzaItem key={pizza.id} pizza={pizza} />)}
+      </div>
     </>
   );
 };

@@ -24,7 +24,7 @@ function App() {
               <h2 className="content__title">All Pizzas</h2>
             </>
           )}
-          <div className="content__items">
+           
             <Routes>
               <Route path="/" element={<PizzaBlock />} />
               <Route path="/cart" element={<Cart />} />
@@ -32,7 +32,7 @@ function App() {
             </Routes>
           </div>
         </div>
-      </div>
+     
     </>
   );
 }

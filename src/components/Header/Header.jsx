@@ -19,7 +19,7 @@ const Header = () => {
           <Link to="/cart.html" className="button button--cart">
             <span>20 $</span>
             <div className="button__delimiter"></div>
-            <ShoppingCart size={40} />
+            <ShoppingCart size={30} />
             <span>3</span>
           </Link>
         </div>
