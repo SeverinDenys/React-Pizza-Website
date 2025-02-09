@@ -16,6 +16,7 @@ const PizzaBlock = () => {
         const result = await response.json();
         setItems(result);
         setIsLoading(false);
+        window.scrollTo(0, 0); //when first time render scroll to top of page
       } catch (err) {
         console.log(err.message);
       }
