@@ -25,10 +25,11 @@ const PizzaBlock = () => {
 
   return (
     <>
-    
-      {isLoading
-        ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
-        : items.map((pizza) => <PizzaItem key={pizza.id} pizza={pizza} />)}
+      <div className="content__items">
+        {isLoading
+          ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
+          : items.map((pizza) => <PizzaItem key={pizza.id} pizza={pizza} />)}
+      </div>
     </>
   );
 };
