@@ -1,15 +1,21 @@
+/* eslint-disable react/prop-types */
+
 import { useState, useEffect } from "react";
 import PizzaItem from "../PizzaItem/PizzaItem";
 import Skeleton from "../Skelleton/Skeleton";
 
-const PizzaBlock = () => {
+const PizzaBlock = ({value}) => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+   
 
   useEffect(() => {
     const fetchedData = async () => {
       try {
-        const response = await fetch("https://67a21092409de5ed52542862.mockapi.io/items");
+        const url = value === 0 
+        ? "https://67a21092409de5ed52542862.mockapi.io/items" // Fetch all when category is 0
+        : `https://67a21092409de5ed52542862.mockapi.io/items?category=${value}`;
+        const response = await fetch(url);
         if (!response.ok) {
           throw new Error("failed to fetch data");
         }
@@ -22,7 +28,7 @@ const PizzaBlock = () => {
       }
     };
     fetchedData();
-  }, []);
+  }, [value]);
 
   return (
     <>

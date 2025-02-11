@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Route, Routes, useLocation } from "react-router";
 import Categories from "./components/Categories/Categories";
 import Header from "./components/Header/Header";
@@ -10,6 +11,9 @@ function App() {
   const location = useLocation(); // Get current route
   const isHomePage = location.pathname === "/"; // Check if it's the homepage
 
+  const [activeCategoryId, setActiveCategoryId] = useState(0);
+  const [selectedSortType, setSelectedSortType] = useState(0);
+
   return (
     <>
       <div className="wrapper">
@@ -18,21 +22,20 @@ function App() {
           {isHomePage && (
             <>
               <div className="content__top">
-                <Categories />
-                <Sort />
+                <Categories value={activeCategoryId} onClickCategory={(i) => setActiveCategoryId(i)} />
+                <Sort selectedSortType={selectedSortType} setSelectedSortType={setSelectedSortType} />
               </div>
               <h2 className="content__title">All Pizzas</h2>
             </>
           )}
-           
-            <Routes>
-              <Route path="/" element={<PizzaBlock />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
+
+          <Routes>
+            <Route path="/" element={<PizzaBlock value={activeCategoryId} />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </div>
-     
+      </div>
     </>
   );
 }

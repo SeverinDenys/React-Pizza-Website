@@ -1,25 +1,16 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { categories } from "../../../categories";
 
-const Categories = () => {
-  const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
-
-  const handleClickCategory = (index) => {
-    setActiveCategoryIndex(index);
-  };
+const Categories = ({ value, onClickCategory }) => {
   return (
     <div className="categories">
       <ul>
         {categories.map((categorieValue, index) => (
-          <li
-            key={index}
-            onClick={() => handleClickCategory(index)}
-            className={activeCategoryIndex === index ? "active" : ""}
-          >
+          <li key={index} onClick={() => onClickCategory(index)} className={value === index ? "active" : ""}>
             {categorieValue}
           </li>
         ))}
-       
       </ul>
     </div>
   );
