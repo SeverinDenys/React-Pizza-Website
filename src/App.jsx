@@ -12,7 +12,10 @@ function App() {
   const isHomePage = location.pathname === "/"; // Check if it's the homepage
 
   const [activeCategoryId, setActiveCategoryId] = useState(0);
-  const [selectedSortType, setSelectedSortType] = useState(0);
+  const [selectedSortType, setSelectedSortType] = useState({
+    name: 'popularity',
+    sortProperty: 'rating'
+  });
 
   return (
     <>
@@ -23,14 +26,14 @@ function App() {
             <>
               <div className="content__top">
                 <Categories value={activeCategoryId} onClickCategory={(i) => setActiveCategoryId(i)} />
-                <Sort selectedSortType={selectedSortType} setSelectedSortType={setSelectedSortType} />
+                <Sort selectedSortType={selectedSortType} setSelectedSortType={(i) => setSelectedSortType(i)} />
               </div>
               <h2 className="content__title">All Pizzas</h2>
             </>
           )}
 
           <Routes>
-            <Route path="/" element={<PizzaBlock value={activeCategoryId} />} />
+            <Route path="/" element={<PizzaBlock value={activeCategoryId} selectedSortType={selectedSortType}/>} />
             <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
